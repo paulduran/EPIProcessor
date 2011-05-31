@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F42D8ACC-8458-468F-9228-6CCAEA74C656}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EPIProcessor</RootNamespace>
+    <AssemblyName>EPIProcessor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.1.1.0.118\lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers">
+      <HintPath>..\packages\FileHelpers.2.0.0.0\lib\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers.ExcelStorage">
+      <HintPath>..\packages\FileHelpers.2.0.0.0\lib\FileHelpers.ExcelStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\packages\FileHelpers.2.0.0.0\lib\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Office">
+      <HintPath>..\packages\FileHelpers.2.0.0.0\lib\Interop.Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.0.0.0\lib\NET40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Extended">
+      <HintPath>..\packages\NLog.2.0.0.0\lib\NET40\NLog.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataPurger.cs" />
+    <Compile Include="Domain\Adviser.cs" />
+    <Compile Include="Domain\Account.cs" />
+    <Compile Include="Domain\AdviserSequence.cs" />
+    <Compile Include="Domain\Entitlement.cs" />
+    <Compile Include="Domain\Investment.cs" />
+    <Compile Include="Domain\InvestmentBalance.cs" />
+    <Compile Include="Domain\Transaction.cs" />
+    <Compile Include="EpiFile.cs" />
+    <Compile Include="EpiFileProcessor.cs" />
+    <Compile Include="EpiRepository.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Records\AdviserDetails.cs" />
+    <Compile Include="Records\CashHoldingBalance.cs" />
+    <Compile Include="Records\CashMovementTransaction.cs" />
+    <Compile Include="Records\ClientDetails.cs" />
+    <Compile Include="Records\Footer.cs" />
+    <Compile Include="Domain\Gender.cs" />
+    <Compile Include="Records\Header.cs" />
+    <Compile Include="Records\IncomeEntitlement.cs" />
+    <Compile Include="Records\InvestmentDetails.cs" />
+    <Compile Include="Records\Record.cs" />
+    <Compile Include="Records\StockHoldingBalance.cs" />
+    <Compile Include="Records\StockMovementTransaction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
